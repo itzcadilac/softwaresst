@@ -1,0 +1,28 @@
+@media print {
+    @page {
+        margin: 0cm 0cm;
+      }    
+
+      body {
+        margin-top: 2cm;
+        margin-left: 0cm;
+        margin-right: 0cm;
+        margin-bottom: 2.89cm;
+        font-family: Myriad Pro;
+      }
+
+      .p2{
+        margin-top: 0px;font-size: 33px;margin-bottom: 24px;margin-left: 278px;
+      }
+      .p3{
+        margin-top: 0px;font-size: 14px;margin-left: 696px;font-weight: bold;
+      }
+      .p4{
+        margin-top: 94px;font-size: 18px;text-align: center;
+      }
+      .p5{
+        margin-top: 33px;font-size: 15px;text-align: center;
+      }
+
+    }  
+

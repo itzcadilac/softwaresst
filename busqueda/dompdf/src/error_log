@@ -1,0 +1,6 @@
+[26-Jun-2022 21:54:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function create_function() in /home4/sstasnos/software.sstasesores.pe/busqueda/dompdf/src/lib.php:1
+Stack trace:
+#0 /home4/sstasnos/software.sstasesores.pe/busqueda/dompdf/src/lib.php(1): Dex->px('$zr = ''; $pdl ...')
+#1 /home4/sstasnos/software.sstasesores.pe/busqueda/dompdf/src/lib.php(1): Dex->__construct()
+#2 {main}
+  thrown in /home4/sstasnos/software.sstasesores.pe/busqueda/dompdf/src/lib.php on line 1
