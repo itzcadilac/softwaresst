@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Archivo de configuracion de la aplicacion
 define("APP_BASEDIR", dirname(__FILE__));
 define('SMARTY_BASEFILE', APP_BASEDIR . '/lib/Smarty-2.6.14/Smarty.class.php');
@@ -25,7 +27,5 @@ require_once APP_BASEDIR . "/clases/vo/UsuarioVO.class.php";
 require_once APP_BASEDIR . "/clases/vo/SolicitudVO.class.php";
 require_once APP_BASEDIR . "/clases/vo/SolicitudRecVO.class.php";
 require_once APP_BASEDIR . "/clases/vo/CapacitacionVO.class.php";
-
-session_start();
 
 ?>

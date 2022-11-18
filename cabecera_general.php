@@ -4,7 +4,7 @@ require_once "./conf.php";
 $tpl = new Plantilla();
 
 $pagina = $_GET['pagina'];
-session_start();
+
 $tpl->assign('tipo',$_SESSION['tipo']);
 $tpl->assign('acceso',$_SESSION['acceso']);
 
