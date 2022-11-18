@@ -1,11 +1,11 @@
 <?php
-// Archivo de configuraci�n de la aplicaci�n
+// Archivo de configuracion de la aplicacion
 define("APP_BASEDIR", dirname(__FILE__));
 define('SMARTY_BASEFILE', APP_BASEDIR . '/lib/Smarty-2.6.14/Smarty.class.php');
 define('ADODB_BASEFILE', APP_BASEDIR . '/lib/adodb-492/adodb.inc.php');
 
-//ini_set('session.gc_maxlifetime','1800'); // 30 minutos
-//ini_set('error_reporting', 'E_ALL');
+ini_set('session.gc_maxlifetime','1800'); // 30 minutos
+ini_set('error_reporting', 'E_ALL');
 
 require_once APP_BASEDIR . "/clases/util/ConexionDB.class.php";
 require_once APP_BASEDIR . "/clases/util/Constantes.class.php";
@@ -26,6 +26,6 @@ require_once APP_BASEDIR . "/clases/vo/SolicitudVO.class.php";
 require_once APP_BASEDIR . "/clases/vo/SolicitudRecVO.class.php";
 require_once APP_BASEDIR . "/clases/vo/CapacitacionVO.class.php";
 
-//session_start();
+session_start();
 
 ?>
