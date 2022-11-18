@@ -12,26 +12,7 @@ $tpl->assign('acceso',$_SESSION['acceso']);
 $se= new ValidacionDAO();
 $vari=$se->TiempoSesion();
 
-//para mostrar los datos en la parte superior
-/*$tpl->assign('area',$_SESSION['nomarea']);
-$tpl->assign('usuario',$_SESSION['nombre']);
-$tpl->assign('cabefecha',$_SESSION['mostrarfecha']);
-
-$daoexp= new ExpedienteDAO();
-$dtoadj = $daoexp->Verificardatosadjuntos();
-$dtoban = $daoexp->Verificardatosbandeja();
-$dtotim = $daoexp->Verificardatostiempo();
-
-$tpl->assign('dtoadj',$dtoadj);
-$tpl->assign('dtoban',$dtoban);
-
 ?>
-<?php
-$daoexp= new ExpedienteDAO();
-/* Abrimos la base de datos */
-
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -106,69 +87,6 @@ $daoexp= new ExpedienteDAO();
 
 				<div class="navbar-buttons navbar-header pull-right" role="navigation">
 					<ul class="nav ace-nav">
-					<!--
-						<li class="red">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-tasks icon-animated-bell"></i>
-								<span class="badge badge-grey"><?php echo $dtotim ?></span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-check"></i>
-									Tiene(s) <?php echo $dtotim ?> Expediente(s)<br> con mas de 01 dia sin recepcionar.
-								</li>
-
-								<li class="dropdown-footer">
-									<a href="formulario_recepcionar_tiempo.php">
-										Ir a revisar
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-					
-						<li class="green">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-envelope icon-animated-vertical"></i>
-								<span class="badge badge-success"><?php echo $dtoban ?></span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-envelope-o"></i>
-									Tiene(s) <?php echo $dtoadj ?> Expediente(s)<br> por responder en su Bandeja de <br>Recepcionados
-								</li>
-								<li class="dropdown-footer">
-									<a href="principal.php">
-										Ir a revisar
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-						
-						<li class="purple">
-							<a data-toggle="dropdown" class="dropdown-toggle" href="#">
-								<i class="ace-icon fa fa-bell icon-animated-bell"></i>
-								<span class="badge badge-important"><?php echo $dtoadj ?></span>
-							</a>
-
-							<ul class="dropdown-menu-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-close">
-								<li class="dropdown-header">
-									<i class="ace-icon fa fa-exclamation-triangle"></i>
-									Tiene(s) <?php echo $dtoadj ?> por responder<br> en su Bandeja de Recepcionados
-								</li>
-
-								<li class="dropdown-footer">
-									<a href="formulario_recepcionados.php">
-										Ir a revisar
-										<i class="ace-icon fa fa-arrow-right"></i>
-									</a>
-								</li>
-							</ul>
-						</li>
-						-->
 						<li class="light-blue">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<!--<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />-->
