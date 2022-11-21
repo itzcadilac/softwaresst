@@ -83,8 +83,8 @@ class Fecha {
   /***************************************************************************
  
   /* public:      mesTexto
-   * mes:         mes en forma numérica
-   * Devuelve el mes en formato texto (y en español, claro)
+   * mes:         mes en forma numï¿½rica
+   * Devuelve el mes en formato texto (y en espaï¿½ol, claro)
    */
   function mesTexto($mes) {
     switch ($mes) {
@@ -127,7 +127,7 @@ class Fecha {
 
   /***************************************************************************/
   /* public:      operar
-   * segundos:    segundos que se añadirán a la fecha
+   * segundos:    segundos que se aï¿½adirï¿½n a la fecha
    * Cambia el valor de una fecha.
    */
   function operar($segundos) {
@@ -240,7 +240,7 @@ class Fecha {
   }
 
   function FechaCombo(){
-    $dia = aray("01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31");
+    $dia = array("01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31");
     $meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
     $ano=array(2007,2008);
 
@@ -278,13 +278,13 @@ class Fecha {
 		$segundos_diferencia = $timestamp1 - $timestamp2;
 		//echo $segundos_diferencia;
 		
-		//convierto segundos en días
+		//convierto segundos en dï¿½as
 		$dias_diferencia = $segundos_diferencia / (60 * 60 * 24);
 		
-		//obtengo el valor absoulto de los días (quito el posible signo negativo)
+		//obtengo el valor absoulto de los dï¿½as (quito el posible signo negativo)
 		$dias_diferencia = abs($dias_diferencia);
 		
-		//quito los decimales a los días de diferencia
+		//quito los decimales a los dï¿½as de diferencia
 		$dias_diferencia = floor($dias_diferencia);
 		
 		return $dias_diferencia;
@@ -322,10 +322,10 @@ class Fecha {
 	    
 	    	if ($fecharecep[$x+1]==""){
 				$valores[]=$this->Calculodias($fecharecep[$x],date("Y-m-d 00:00:00"));				
-//echo $fecharecep[$x]." - ".date("Y-m-d 00:00:00")." Nº Reg:".$c++."<br>";
+//echo $fecharecep[$x]." - ".date("Y-m-d 00:00:00")." Nï¿½ Reg:".$c++."<br>";
 			}else{
 				$valores[]=$this->Calculodias($fecharecep[$x],$fechaderiv[$x+1]);
-				//echo $fecharecep[$x]." - ".$fechaderiv[$x+1]." Nº Reg:".$c++."<br>";
+				//echo $fecharecep[$x]." - ".$fechaderiv[$x+1]." Nï¿½ Reg:".$c++."<br>";
 			}	
 				
 	   }	
@@ -505,14 +505,15 @@ class Fecha {
 function Graficadocxmesareas($area,$nomarea){
     
     /*******************************************/    
-	    $BD = new ConexionDB();
+	    
+      $BD = new ConexionDB();
 	
 	   	$query="select a.descripcion_area,count(h.idareaenvia) as total, month(fecha_mov) as mes from historial h, areas a where h.idareaenvia='".$area."' and h.estadoexp=6 and h.idareaenvia=a.idarea group by a.descripcion_area, month(fecha_mov)";
 
      	$recordSet = $BD->dbLink->Execute($query);
 
      	while($fila=$recordSet->FetchRow()) {
-     	  $mestexto1=$this->DarMes($fila['mes']);	
+     	$mestexto1=$this->DarMes($fila['mes']);	
 		  $datay[] = $mestexto1;        
 		  $valores[]=$fila['total'];
 		  $sumtotal = $sumtotal + $fila['total'];
