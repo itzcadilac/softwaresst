@@ -3,7 +3,7 @@
 // configure
 $from = 'SST Asesores S.A.C. <entrenamiento@sstasesores.pe>';
 $sendTo = "'".$_SESSION['razons']."'". "<".$_SESSION['email'].">"; //<ventas@novoexpert.net>; // Add Your Email
-$subject = 'Solicitud Recibida';
+$subject = 'Solicitud Recibida - Solicitante';
 //$fields = array('name' => 'Nombres', 'subject' => 'Asunto', 'email' => 'Correo', 'message' => 'Mensaje'); // array variable name => Text to appear in the email
 //$okMessage = 'Tu Solicitud fue enviada con éxito, muy pronto estaremos en contacto con Ud.';
 //$errorMessage = 'Ha ocurrido un error mientras se realizaba el envío del formulario, intente de nuevo por favor.';
