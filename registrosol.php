@@ -7,6 +7,8 @@ $daosol = new SolicitudDAO();
 
 $BD = new ConexionDB();
 
+//var horarios = . $_POST['horario_r'] . ;
+
 $horario = $_POST['horario_r'];
 $autorizador = $_POST['idAutorizador'];
 $cuposdispo = $_POST['cuposdispo'];
@@ -19,7 +21,8 @@ $cantdispo = 0;
 <script>
 $(function(){
 
-var horarios = $_POST['horario_r'];
+//var horario = $('#horario_r').val();
+var horarios = `${$_POST['horario_r']}`;
 var url = 'busquedacupos2.php';
 var text = ''
 //$('.ajaxgif').removeClass('hide');
