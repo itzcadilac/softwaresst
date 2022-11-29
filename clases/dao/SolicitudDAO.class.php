@@ -68,5 +68,18 @@ class SolicitudDAO{
         }
         return 1;
   } 
+
+  function ConsultaCupos($numpart){
+    session_start();
+    $BD = new ConexionDB();
+    $fec = new Fecha();
+    $query="SELECT cuposdispo FROM calendcapacitaciones WHERE idecalendcapacitaciones = '$numpart';";	 
+    $recordSet = $BD->ejecutar($query);
+    $bandeja = array();
+    while($fila=$recordSet->fetch_assoc()) {    
+      $bandeja[] = new SolicitudVO($fila['cuposdispo']);
+    }
+      return $bandeja;
+}
 }
 ?>
