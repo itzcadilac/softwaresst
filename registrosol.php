@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "./conf.php";
-require_once "./busquedacupos2.php";
+//require_once "./busquedacupos2.php";
 
 $daosol = new SolicitudDAO();
 
