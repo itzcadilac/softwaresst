@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "./conf.php";
-require_once "./busquedacupos.php";
+require_once "./busquedacupos2.php";
 
 $daosol = new SolicitudDAO();
 
@@ -20,7 +20,7 @@ $cantdispo = 0;
 $(function(){
 
 var horarios = $_POST['horario_r'];
-var url = 'busquedacupos.php';
+var url = 'busquedacupos2.php';
 var text = ''
 //$('.ajaxgif').removeClass('hide');
 $.ajax({
