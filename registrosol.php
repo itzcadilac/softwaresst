@@ -17,38 +17,13 @@ $numeropart = $_POST['numpart'];
 $cantdispo = 0;
 //var horario = intval($horario);
 //console.log(horario);
-?>
-<script>
-$(function(){
 
-//var horario = $('#horario_r').val();
-var horarios = `${$_POST['horario_r']}`;
-var url = 'busquedacupos2.php';
-var text = ''
-//$('.ajaxgif').removeClass('hide');
-$.ajax({
-type:'POST',
-url:url,
-data:'horarios='+horarios,
-success: function(response){
-    //$('.ajaxgif').addClass('hide');
-    var datos = JSON.parse(response);
-    datos.data.forEach(item => {
-    $cantdispo += `${item.cuposdispo}`
-    
-    });
-}
-});
-
-});
-<script>
-
-<?php
+$cantdispo = $daosol->ConsultaCupos($horario);
 
 if($cantdispo < $numeropart){
-
-    header ("Location: registrosolicitud.php");
-
+    print "$cantdispo: $cantdispo";
+    //header ("Location: registrosolicitud.php");
+    
 }
 
 else {
