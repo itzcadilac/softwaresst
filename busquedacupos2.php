@@ -20,6 +20,6 @@ if ($busqueda != ''){
 	echo json_encode($data);
 }
 else{
-	echo "No se envío tipo de capacitación.";
+	echo "No se envío tipo de capacitación 2";
 }	
 ?>
