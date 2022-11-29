@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "./conf.php";
+require_once "./busquedacupos.php";
 
 $daosol = new SolicitudDAO();
 
@@ -8,12 +9,18 @@ $BD = new ConexionDB();
 
 $horario = $_POST['horario_r'];
 $autorizador = $_POST['idAutorizador'];
+$cuposdispo = $_POST['cuposdispo'];
+$numeropart = $_POST['numpart'];
+
+
 /*
 print "variable horario: ";
 print $horario;
 print "variable autorizador: ";
 print $autorizador;
 */
+
+
 $query1="SELECT tip.desccapacitacion, cal.hora FROM tipcapacitaciones tip, calendcapacitaciones cal WHERE tip.idecapacitacion = cal.idecapacitacion AND cal.idecalendcapacitaciones='$horario'";
 
 if ($recordSet = $BD->ejecutar($query1)){

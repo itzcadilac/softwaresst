@@ -578,30 +578,40 @@ $conexion->close(); //cerramos la conexión
 <script>
 	$(document).on('submit','form.formregistrar',function(){
 		
-		$('#tipcapacitaciones').on('change', function(){
-		var tipcapacitaciones = $('#tipcapacitaciones').val();
-		var url = 'busquedahorarios.php';
+		var horario = $('#horario_r').val();
+		//console.log(horario);
+		var url = 'busquedacupos.php';
 		var text = ''
 		//$('.ajaxgif').removeClass('hide');
 		$.ajax({
 		type:'POST',
 		url:url,
-		data:'tipcapacitaciones='+tipcapacitaciones,
+		data:'horario='+horario,
 		success: function(response){
+			//$('.ajaxgif').addClass('hide');
 			var datos = JSON.parse(response);
-			$('#cuposlibres').html(` 
-			<input type="text" name="cuposdispo" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="" readonly />
-			`);
-			var output = ['<option value="0">---Seleccione---</option>']
 			datos.data.forEach(item => {
-			output.push(`<option value="${item.idecalendcapacitaciones}">${item.hora}</option>`);				
+			text += `${item.cuposdispo}`
+			
 			});
-			console.log($('#horario_r').get(0));
-			$('#horario_r').get(0).innerHTML = output.join('');
+			//console.log(text);
+			$('#cuposlibres').html(` 
+			<input type="text" name="cuposdispo" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="${text}" readonly />
+			`);
+			/*
+			$(document).ready(function() {
+				$("#numpart").attr({
+				"max" : `${text}`,
+				"min" : 1
+				});
+			});
+			*/
+			$('#numparticip').html(`
+			<input type="number" name="numpart" id="numpart"  min="1" max="${text}" onkeypress="return solonumero(event);" pattern="^[0-${text}]+" autocomplete="off" onpaste="return false"/>
+			`);
 		}
 		});
 		return false;
-		});
 		
 	});
 
