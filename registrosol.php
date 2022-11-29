@@ -19,7 +19,7 @@ $cantdispo = 0;
 <script>
 $(function(){
 
-var horarios = $horario;
+var horarios = $_POST['horario_r'];
 var url = 'busquedacupos2.php';
 var text = ''
 //$('.ajaxgif').removeClass('hide');
