@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "./conf.php";
-require_once "./busquedacupos.php";
+require_once "./busquedacupos2.php";
 
 $daosol = new SolicitudDAO();
 
@@ -12,7 +12,43 @@ $autorizador = $_POST['idAutorizador'];
 $cuposdispo = $_POST['cuposdispo'];
 $numeropart = $_POST['numpart'];
 
+$cantdispo = 0;
+//var horario = intval($horario);
+//console.log(horario);
+?>
+<script>
+$(function(){
 
+var horarios = $_POST['horario_r'];
+var url = 'busquedacupos2.php';
+var text = ''
+//$('.ajaxgif').removeClass('hide');
+$.ajax({
+type:'POST',
+url:url,
+data:'horarios='+horarios,
+success: function(response){
+    //$('.ajaxgif').addClass('hide');
+    var datos = JSON.parse(response);
+    datos.data.forEach(item => {
+    $cantdispo += `${item.cuposdispo}`
+    
+    });
+}
+});
+
+});
+<script>
+
+<?php
+
+if($cantdispo < $numeropart){
+
+    header ("Location: registrosolicitud.php");
+
+}
+
+else {
 /*
 print "variable horario: ";
 print $horario;
@@ -94,5 +130,7 @@ else {
     include  './contactos/contactsst_nestle.php';
 }
 header ("Location: registrosolicitud.php");
-          
+
+}
+
 ?>
