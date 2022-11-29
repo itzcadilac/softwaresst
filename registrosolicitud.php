@@ -260,17 +260,19 @@ function validar(){
     			  document.formregistrar.tipcapacitaciones.focus();
     			  return false;
     }
-	if (document.formregistrar.horario_r.value == 0||
+	if (document.formregistrar.horario_r.value == 0 ||
 		document.formregistrar.horario_r.value== ""){
     			  alert("No ha Seleccionado Ningún Horario.");
     			  document.formregistrar.horario_r.focus();
     			  return false;
     }
-	if (document.formregistrar.cuposdispo.value==""){
-    			  alert("No ha Seleccionado Ningún Horario.");
+	if (document.formregistrar.cuposdispo.value=="" ||
+		document.formregistrar.cuposdispo.value =< 0){
+    			  alert("El Valor de los Cupos debe ser mayor a 0, revisar nuevamente.");
     			  document.formregistrar.cuposdispo.focus();
     			  return false;
     }
+	
 	if (document.formregistrar.numpart.value=="" || document.formregistrar.numpart.value < 1 ){
     			  alert("No ha ingresado sus participantes.");
     			  document.formregistrar.numpart.focus();
@@ -572,7 +574,37 @@ $conexion->close(); //cerramos la conexión
 		});
 	});
 </script>
+
 <script>
+	$(document).on('submit','form.formregistrar',function(){
+		
+		$('#tipcapacitaciones').on('change', function(){
+		var tipcapacitaciones = $('#tipcapacitaciones').val();
+		var url = 'busquedahorarios.php';
+		var text = ''
+		//$('.ajaxgif').removeClass('hide');
+		$.ajax({
+		type:'POST',
+		url:url,
+		data:'tipcapacitaciones='+tipcapacitaciones,
+		success: function(response){
+			var datos = JSON.parse(response);
+			$('#cuposlibres').html(` 
+			<input type="text" name="cuposdispo" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="" readonly />
+			`);
+			var output = ['<option value="0">---Seleccione---</option>']
+			datos.data.forEach(item => {
+			output.push(`<option value="${item.idecalendcapacitaciones}">${item.hora}</option>`);				
+			});
+			console.log($('#horario_r').get(0));
+			$('#horario_r').get(0).innerHTML = output.join('');
+		}
+		});
+		return false;
+		});
+		
+	});
+
 	$(function(){
 
 		$('#tipcapacitaciones').on('change', function(){
