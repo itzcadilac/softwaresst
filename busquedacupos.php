@@ -1,7 +1,7 @@
 <?php
 // require 'conexion.php';
 require_once "conf.php";
-$busqueda=$_POST['horario'];
+$busqueda=$_POST['horarios'];
 
 if ($busqueda != ''){
 	

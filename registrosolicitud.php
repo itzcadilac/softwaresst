@@ -576,45 +576,7 @@ $conexion->close(); //cerramos la conexión
 </script>
 
 <script>
-	$(document).on('submit','form.formregistrar',function(){
-		
-		var horario = $('#horario_r').val();
-		//console.log(horario);
-		var url = 'busquedacupos.php';
-		var text = ''
-		//$('.ajaxgif').removeClass('hide');
-		$.ajax({
-		type:'POST',
-		url:url,
-		data:'horario='+horario,
-		success: function(response){
-			//$('.ajaxgif').addClass('hide');
-			var datos = JSON.parse(response);
-			datos.data.forEach(item => {
-			text += `${item.cuposdispo}`
-			
-			});
-			//console.log(text);
-			$('#cuposlibres').html(` 
-			<input type="text" name="cuposdispo" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="${text}" readonly />
-			`);
-			/*
-			$(document).ready(function() {
-				$("#numpart").attr({
-				"max" : `${text}`,
-				"min" : 1
-				});
-			});
-			*/
-			$('#numparticip').html(`
-			<input type="number" name="numpart" id="numpart"  min="1" max="${text}" onkeypress="return solonumero(event);" pattern="^[0-${text}]+" autocomplete="off" onpaste="return false"/>
-			`);
-		}
-		});
-		return false;
-		
-	});
-
+	
 	$(function(){
 
 		$('#tipcapacitaciones').on('change', function(){
