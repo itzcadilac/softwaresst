@@ -19,6 +19,9 @@ $cantdispo = 0;
 //console.log(horario);
 
 $cantdispo = $daosol->ConsultaCupos($horario);
+print $cantdispo;
+console.log($cantdispo);
+print_r($cantdispo);
 
 if($cantdispo < $numeropart){
     print "$cantdispo: $cantdispo";
