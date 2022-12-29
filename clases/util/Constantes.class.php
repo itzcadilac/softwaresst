@@ -3,9 +3,9 @@
 class Constantes {
 
     var $TITULO_PROYECTO = '';
-	var $user="novoex_asesores";
-	var $passw="casa123456@";//casa
-	var $bdsist="novoex_sstasesores";
+	var $user="sstase_consul";
+	var $passw="sstconsultas2020";//casa
+	var $bdsist="sstase_consultas";
 }
 
 ?>
