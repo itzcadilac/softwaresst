@@ -9,7 +9,7 @@ class ConexionDB {
 
     public function ConexionDB(){
         
-        $this->dbLink = new mysqli('localhost', 'novoex_asesores', 'casa123456@', 'novoex_sstasesores');
+        $this->dbLink = new mysqli('localhost', 'sstase_consul', 'sstconsultas2020', 'sstase_consultas');
         if ($this->dbLink->connect_error) //verificamos si hubo un error al conectar, recuerden que pusimos el @ para evitarlo
         {
             die('Error de conexión: ' . $conexion->connect_error); //si hay un error termina la aplicación y mostramos el error
