@@ -3,7 +3,7 @@
 // configure
 $from = 'SST Asesores S.A.C. <entrenamiento@sstasesores.pe>';
 $sendTo = "'".$_SESSION['razons']."'". "<".$_SESSION['email'].">"; //<ventas@novoexpert.net>; // Add Your Email
-$subject = 'Solicitud Recibida - Solicitante';
+$subject = 'Solicitud Recibida';
 //$fields = array('name' => 'Nombres', 'subject' => 'Asunto', 'email' => 'Correo', 'message' => 'Mensaje'); // array variable name => Text to appear in the email
 //$okMessage = 'Tu Solicitud fue enviada con éxito, muy pronto estaremos en contacto con Ud.';
 //$errorMessage = 'Ha ocurrido un error mientras se realizaba el envío del formulario, intente de nuevo por favor.';
@@ -152,7 +152,7 @@ $htmlcontent = "
                                     style='display: block; border: 0; width: 20px;'>
                                 </td>-->
                                 <td>
-                                  Recuerda que, este correo es para notificar la Solicitud registrada, una vez se Aprobada la Capacitación, estará llegando un correo con la descripción del Lugar de Capacitación e indicaciones adicionales.
+                                  Recuerda que, este correo es para notificar la Solicitud registrada, una vez sea Aprobada la Capacitación, estará llegando un correo con la descripción del Lugar de Capacitación e indicaciones adicionales.
                                 </td>
                               </tr>
                             </tbody>
