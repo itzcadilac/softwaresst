@@ -19,10 +19,11 @@ $cantdispo = 0;
 //console.log(horario);
 
 $cantdispo = $daosol->ConsultaCupos($horario);
-print $cantdispo;
+//print $cantdispo;
 console.log($cantdispo);
-print_r($cantdispo);
+//print_r($cantdispo);
 
+/*
 if($cantdispo < $numeropart){
     print "$cantdispo: $cantdispo";
     //header ("Location: registrosolicitud.php");
@@ -30,13 +31,13 @@ if($cantdispo < $numeropart){
 }
 
 else {
-/*
+
 print "variable horario: ";
 print $horario;
 print "variable autorizador: ";
 print $autorizador;
-*/
 
+*/
 
 $query1="SELECT tip.desccapacitacion, cal.hora FROM tipcapacitaciones tip, calendcapacitaciones cal WHERE tip.idecapacitacion = cal.idecapacitacion AND cal.idecalendcapacitaciones='$horario'";
 
@@ -112,6 +113,6 @@ else {
 }
 header ("Location: registrosolicitud.php");
 
-}
+//}
 
 ?>
