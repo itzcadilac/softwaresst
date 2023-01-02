@@ -230,7 +230,7 @@ else {
 }
 
 function validar(){
-   	if (confirm('¿Estás seguro de ingresar esta solicitud?')){
+   	//if (confirm('¿Estás seguro de ingresar esta solicitud?')){
 	
 	if (document.formregistrar.razons.value==""){
     			  alert("No ha ingresado ninguna Razón Social.");
@@ -289,7 +289,7 @@ function validar(){
     			  return false;
     }
 	
-   }
+   //}
    if(!document.formregistrar.submit())
 	{
 		$("#div_success").show();
