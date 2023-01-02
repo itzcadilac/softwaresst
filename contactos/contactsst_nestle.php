@@ -2,7 +2,7 @@
 
 // configure
 $from = 'SST Asesores S.A.C. <entrenamiento@sstasesores.pe>';
-$sendTo = 'SST Asesores S.A.C. <info@sstasesores.pe>'; //<ventas@novoexpert.net>; // Add Your Email
+$sendTo = 'SST Asesores S.A.C. <entrenamiento@sstasesores.pe>'; //<ventas@novoexpert.net>; // Add Your Email
 $subject = 'Solicitud Recibida';
 //$fields = array('name' => 'Nombres', 'subject' => 'Asunto', 'email' => 'Correo', 'message' => 'Mensaje'); // array variable name => Text to appear in the email
 //$okMessage = 'Tu Solicitud fue enviada con éxito, muy pronto estaremos en contacto con Ud.';
