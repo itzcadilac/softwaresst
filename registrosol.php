@@ -18,7 +18,7 @@ $cantdispo = 0;
 //var horario = intval($horario);
 //console.log(horario);
 
-$cantdispo = $daosol->ConsultaCupos($horario);
+//$cantdispo = $daosol->ConsultaCupos($horario);
 //print $cantdispo;
 console.log($cantdispo);
 //print_r($cantdispo);
@@ -101,16 +101,19 @@ $solVO = new SolicitudVO("",
                         );
 
 $daosol->RegistrarSolicitud($solVO, $_POST['tipcapacitaciones']);
-
+/*
 if($_POST['idAutorizador'] == null){
+
     include  './contactos/contact.php';
     include  './contactos/contactsst_otro.php';
+    
 }
 else {
+    
     include  './contactos/contactaut.php';
     include  './contactos/contact.php';
     include  './contactos/contactsst_nestle.php';
-}
+}*/
 header ("Location: registrosolicitud.php");
 
 //}
