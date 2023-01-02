@@ -41,9 +41,9 @@ class SolicitudDAO{
         //print "DESPUES DEL INSERT ID 1: $id";
         //print "DESPUES DEL INSERT ID 2: mysqli_insert_id($link)";
         $id1 = mysqli_insert_id($BD->dbLink);
-        $_SESSION['idesolicitud_correo'] = $id1;
+        $_SESSION['idesolicitud_correo'] = $id;
         foreach($capacitaciones as $tag){
-          $values[] = '("'.$id1.'", "'.$tag.'")' ;
+          $values[] = '("'.$id.'", "'.$tag.'")' ;
         }
         /*
         print "DESPUES DEL FOR EACH";
