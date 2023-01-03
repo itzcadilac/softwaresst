@@ -218,6 +218,7 @@ else {
 <input type="hidden" id="idAutorizador"  name="idAutorizador" />
 <input type="hidden" id="numruc" name="numruc" />
 <script language="javascript">
+
 function validate(form) {
 
 if(!valid) {
@@ -232,64 +233,61 @@ else {
 function validar(){
    	//if (confirm('¿Estás seguro de ingresar esta solicitud?')){
 	
-	if (document.formregistrar.razons.value==""){
+	if (document.formregistrar.razons.value == ""){
     			  alert("No ha ingresado ninguna Razón Social.");
     			  document.formregistrar.razons.focus();
     			  return false;
     }
-	if (document.formregistrar.contratista.value == 0||
-		document.formregistrar.contratista.value== ""){
+	if (document.formregistrar.contratista.value == 0|| document.formregistrar.contratista.value == ""){
     			  alert("No ha Seleccionado Ningún Cliente.");
     			  document.formregistrar.contratista.focus();
     			  return false;
     }
-	if (document.formregistrar.autorizador.value == 0||
-		document.formregistrar.autorizador.value== ""){
+	if (document.formregistrar.autorizador.value == 0|| document.formregistrar.autorizador.value == ""){
     			  alert("No ha Seleccionado Ningún Autorizador.");
     			  document.formregistrar.autorizador.focus();
     			  return false;
     }
-	if (document.formregistrar.idAutorizador.value==""){
+	if (document.formregistrar.idAutorizador.value == ""){
     			  alert("No ha Seleccionado Ningún Autorizador Registrado.");
     			  document.formregistrar.autorizador.focus();
     			  return false;
     }
-	if (document.formregistrar.tipcapacitaciones.value == 0||
-		document.formregistrar.tipcapacitaciones.value== ""){
+	if (document.formregistrar.tipcapacitaciones.value == 0|| document.formregistrar.tipcapacitaciones.value == ""){
     			  alert("No ha Seleccionado Ninguna Capacitación.");
     			  document.formregistrar.tipcapacitaciones.focus();
     			  return false;
     }
-	if (document.formregistrar.horario_r.value == 0 ||
-		document.formregistrar.horario_r.value== ""){
-    			  alert("No ha Seleccionado Ningún Horario.");
+	if (document.formregistrar.horario_r.value == 0 || document.formregistrar.horario_r.value == ""){
+				  alert("No ha Seleccionado Ningún Horario.");
     			  document.formregistrar.horario_r.focus();
     			  return false;
     }
-	if (document.formregistrar.cuposdispo.value=="" ||
-		document.formregistrar.cuposdispo.value =< 0){
+	if (document.formregistrar.cuposdispo.value == "" || document.formregistrar.cuposdispo.value <= 0){
     			  alert("El Valor de los Cupos debe ser mayor a 0, revisar nuevamente.");
     			  document.formregistrar.cuposdispo.focus();
     			  return false;
     }
 	
-	if (document.formregistrar.numpart.value=="" || document.formregistrar.numpart.value < 1 ){
+	if (document.formregistrar.numpart.value == "" || document.formregistrar.numpart.value < 1 ){
     			  alert("No ha ingresado sus participantes.");
     			  document.formregistrar.numpart.focus();
     			  return false;
     }
-	if (document.formregistrar.email.value==""){
+	if (document.formregistrar.email.value == ""){
     			  alert("No ha ingresado su correo de contacto.");
     			  document.formregistrar.email.focus();
     			  return false;
     }
-	if (document.formregistrar.numcontac.value==""){
+	if (document.formregistrar.numcontac.value == ""){
     			  alert("No ha ingresado su número de contacto.");
     			  document.formregistrar.numcontac.focus();
     			  return false;
     }
 	
    //}
+
+   /*
    if(!document.formregistrar.submit())
 	{
 		$("#div_success").show();
@@ -297,7 +295,7 @@ function validar(){
 	else {
 		$("#div_danger").show();
 	}
-   /*
+   
     else{
 	if(!document.formregistrar.submit())
 	{
@@ -573,6 +571,15 @@ $conexion->close(); //cerramos la conexión
 		return false;
 		});
 	});
+</script>
+
+<script>
+/*
+$('formregistrar').submit(function(){
+    $('#div_success').show();  
+
+	});
+*/
 </script>
 
 <script>
