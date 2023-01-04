@@ -1,0 +1,19 @@
+div.suggestions {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FFFFE1;
+    border: 1px solid black;
+    position: absolute;
+	Font-size:12px;
+	font-Family:verdana;   
+}
+
+div.suggestions div {
+    cursor: default;
+    padding: 0pxd 3px;
+}
+
+div.suggestions div.current {
+    background-color: #3366cc;
+    color: white;
+}

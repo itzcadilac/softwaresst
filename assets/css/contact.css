@@ -1,0 +1,31 @@
+.td-table-detalle-left {
+    font-size: 16px;
+    border-bottom: 1px solid #E4E8F7;
+    border-top: 1px solid #E4E8F7;
+    line-height: 20px;
+    color: #676F8F;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .td-table-detalle-rigth {
+    font-size: 16px;
+    border-bottom: 1px solid #E4E8F7;
+    border-top: 1px solid #E4E8F7;
+    line-height: 20px;
+    color: #676F8F;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: right;
+  }
+
+  .table-head {
+    max-width: 600px;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 0;
+    font-family: Arial, Helvetica;
+  }

@@ -1,0 +1,51 @@
+   <html>
+   <head>
+   <script type="text/javascript">
+   function MostrarFilas(Fila) {
+   var elementos = document.getElementsByName(Fila);
+        for (i = 0; i< elementos.length; i++) {
+            if(navigator.appName.indexOf("Microsoft") > -1){
+                   var visible = 'block'
+            } else {
+                  var visible = 'table-row';
+           }
+   elementos[i].style.display = visible;
+           }
+   }
+
+   function OcultarFilas(Fila) {
+       var elementos = document.getElementsByName(Fila);
+       for (k = 0; k< elementos.length; k++) {
+                  elementos[k].style.display = "none";
+       }
+   }
+   </script>
+   </head>
+   <body >
+   <form id="form1" name="form1" method="post" action="">
+     <table width="90%" border="0" cellspacing="0" cellpadding="5">
+       <tr>
+         <td colspan="2">Los campos marcados con un asterisco son obligatorios </td>
+       </tr>
+       <tr>
+         <td width="26%">(*) Nombre:</td>
+         <td width="74%"><input name="Nombre" type="text" /></td>
+       </tr>
+       <tr name="Op" id="Op">
+         <td>Apellidos:</td>
+         <td><input name="Apellidos" type="text"  /></td>
+       </tr>
+       <tr>
+         <td>(*) E-mail:</td>
+        <td><input name="E-mail" type="text"/></td>
+       </tr>
+       <tr name="Op" id="Op">
+         <td>Tel&eacute;fono:</td>
+         <td><input name="Telefono" type="text" /></td>
+       </tr>
+     </table>
+     <p><a href="javascript:OcultarFilas('Op')">Ocultar Opcionales</a> </p>
+      <p><a href="javascript:MostrarFilas('Op')">Mostrar Opcionales</a> </p>
+   </form>
+   </body>
+   </html>

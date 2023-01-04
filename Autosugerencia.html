@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Ejemplo Autosugerencias</title>
+        <script type="text/javascript" src="json.js"></script>
+        <script type="text/javascript" src="zxml.js"></script>
+        <script type="text/javascript" src="autosuggest.js"></script>
+        <link rel="stylesheet" type="text/css" href="autosuggest.css" />        
+        <script type="text/javascript">
+            window.onload = function () {
+                var oTextbox = new AutoSuggestControl(document.getElementById("txtState"), new SuggestionProvider());
+            }
+        </script>
+    </head>
+    <body>
+        <form method="post" onSubmit="alert('Submitted!')">
+            <table border="0">
+                <tr>
+                    <td>Provincia:</td>
+                    <td><input type="text" name="txtState" id="txtState" autocomplete="off" style="width:750px; font-size:9px"/></td>
+                </tr>
+                
+                               
+            </table>
+            <input type="submit" value="Salvar Informaci&oacute;n" />
+        </form>
+    </body>
+</html>

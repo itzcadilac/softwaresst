@@ -1,0 +1,788 @@
+/* ------------------------------------ *
+ CSS
+ Miércoles, 15 de Noviembre de 2006 02:46:16 p.m.
+ HAPedit 3.1.11.111
+ * ------------------------------------ */
+
+.notas{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:10px;
+  font-weight:bold;
+  color:#1E5B9D;
+}
+/*****estilo formularios************/
+.marcoform{
+  border:#666666 1px solid;
+  background:#FFFFE0;
+}
+
+.titulos{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:13px;
+  font-weight:bold;
+  color:#1E5B9D;
+}
+
+
+
+/**********************************/
+
+ a.link1:link{color:#fff;text-decoration:none;font-size:1em}
+ a.link1:hover{color:#fff;text-decoration:underline;font-size:1em}
+ a.link1:active{color:#fff;background:black;textdecoration:
+	overline;font-size:1em} 
+ a.link1:visited{color:#fff;font-style:italic;font-size:1em}
+
+
+
+/***********************/
+/* estilo del cajas de fecha y carpetas /* 
+/********************/
+.cabecaja{
+  border-collapse: collapse;
+  border: 2px solid #666666;
+}
+.titucaja{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:13px;
+  font-weight:bold;
+  color:#ffffff;
+  background:#4A5D75;	
+}
+
+
+/***********************/
+.cajainf{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:0.9em;
+  color:#ffffff;
+  background:#4A5D75;	
+	
+}
+
+/***************************************************/
+
+
+/***************************************************/
+
+
+/*********colores de estado************/
+.ependiente{
+	color:#8000FF;
+}
+.edetenido{
+	color:#FF0000;	
+}
+.eobservado{
+	color:#D56230;
+}
+.eatendido{
+	color:#19962B;
+}
+/**************************************/
+
+/*****cabecera de pagina***********/
+.cabecera{
+	font-size:12px;	
+	font-family:Verdana;
+	background:#4A5D75;
+	BORDER-BOTTOM: #000 1px solid;
+}
+.titulotramite{
+	color:#fff;
+	font-size:22px;
+	font-weight:bold;
+}
+.subtitulotramite{
+	color:#fff;
+	font-size:14px;
+}
+input.caja-busqueda{
+	BORDER-RIGHT: #000 1px solid;
+	BORDER-TOP: #000 1px solid;
+	FONT-SIZE: 14px;
+	BORDER-LEFT: #000 1px solid;
+	COLOR: #000;
+	BORDER-BOTTOM: #000 1px solid;
+	FONT-FAMILY: Verdana, Arial;
+	BACKGROUND-COLOR:#FFFF99;
+	font-weight:bold;
+}
+.datosusu{
+	color:#fff;
+	font-size:11px;
+	
+}
+.busqueda{
+	font-size:18px;
+	font-family:Verdana;
+}
+  
+/*******************************************/
+
+.titulopagina{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color:#1E5B9D;
+/*  background:#ECE9D8;*/
+background:#E6E6FA;
+/*  background-image:url(FONDOTITU.jpg);*/
+  background-repeat:"repeat-x";
+}
+
+.titulos{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:13px;
+  font-weight:bold;
+  color:#1E5B9D;
+}
+.titulos-menu{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:11px;
+  font-weight:bold;
+  color:#1E5B9D;
+}
+.titulos-registro{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:12px;
+  font-weight:bold;
+  Color:#fff;
+  text-align:right;
+  background:#AFB3AB;
+}
+.comentarios{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:11px;
+  font-weight:normal;
+  Color:#FF0000;
+}
+
+/*************** tablas cabecera pagina *************************************/
+
+.tablascaja table {
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+	BORDER-RIGHT: #bbbbbb 1px solid; 
+	BORDER-TOP: #bbbbbb 1px solid; 
+	BORDER-LEFT: #bbbbbb 1px solid; 
+	BORDER-BOTTOM: #bbbbbb 1px solid; 
+	BORDER-COLLAPSE: collapse; 
+	border-spacing: 0px
+}
+.tablascaja tbody td {
+	border: 1px solid #BBBBBB;
+	padding: 0.5em;
+	font-size: 0.6em;
+	text-align:left;
+}
+.tablascaja thead th {
+ 	BORDER-RIGHT: #bbbbbb 1px solid; 
+	BORDER-TOP: #bbbbbb 1px solid; 
+	BORDER-LEFT: #bbbbbb 1px solid; 
+ 	font-weight:bolder;
+	FONT-SIZE: 1.2em; 
+	PADDING-TOP: 0.3em;
+	color: #FFF;
+	text-align:left;
+	background: #4A5D75;	
+}
+
+
+/****************************************************************************/
+
+
+.tablasimpre table {
+	border-collapse: collapse;
+	border: 3px solid #000;
+	font-size: 0.85em;
+	font-family: verdana, arial;
+	color: #000;
+	background: #fff;
+}
+.tablasimpre caption{
+ 	border: 3px solid #000; 	
+	text-transform:		uppercase;
+	font-size: 			1.6em;
+	color:				#000000;
+	text-align:			left;
+	font-weight:		bolder;
+
+}
+.tablasimpre td, th {
+	border: 3px solid #000;
+	padding: 0.5em;
+	font-size: 0.8em;
+}
+.tablasimpre thead th {
+	border: 3px solid #000;
+	text-align: left;
+	font-size: 0.80em;
+	font-weight: bold;
+	background: #F0F0F0;
+}
+.tablasimpre tfoot th, tfoot td {
+
+	text-align: left;
+	font-size: 0.80em;
+	background: #e8e8cf;
+}
+.tablasimpre tfoot th {
+	font-weight: bold;
+}
+.tablasimpre tbody td a {
+	background: transparent;
+	color: #003366;
+	text-decoration: underline;
+	font-size: 1.1em;
+}
+.tablasimpre tbody th a {
+ 	
+	background: transparent;
+	color: #003366;
+	font-weight: bold;	
+	font-weight: bold;
+	font-size: 1.1em;
+}
+.tablasimpre tbody th a:visited {
+	color: #003366;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.tablasimpre tbody th, tbody td {
+	vertical-align: top;
+	text-align: left;
+}
+.tablasimpre tfoot td {
+	border: 1.5px solid #996;
+}
+.tablasimpre tbody tr:hover {
+	background: #ffffd9;
+}
+
+
+/*****************TABLAS DE PRESENTACION DE DATOS**************************/
+.tablas table {
+	border-collapse: collapse;
+	border: 1.5px solid #BBBBBB;
+	font-size: 0.85em;
+	font-family: verdana, arial;
+	color: #000;
+	background: #fff;
+}
+.tablas caption{
+	text-transform:		uppercase;
+	font-size: 			1.6em;
+	color:				#000000;
+	text-align:			left;
+	font-weight:		bolder;
+
+}
+.tablas td, th {
+	border: 1.5px solid #BBBBBB;
+	padding: 0.5em;
+	font-size: 0.8em;
+}
+.tablas thead th {
+	border: 1.5px solid #BBBBBB;
+	text-align: left;
+	font-size: 1em;
+	font-weight: bold;
+	background: #F0F0F0;
+}
+.tablas tfoot th, tfoot td {
+	border: 1.5px solid #e0e0e0;
+	text-align: left;
+	font-size: 0.80em;
+	background: #e8e8cf;
+}
+.tablas tfoot th {
+	font-weight: bold;
+}
+.tablas tbody td a {
+	border: 1.5px solid #BBBBBB;
+	background: transparent;
+	color: #003366;
+	text-decoration: underline;
+	font-size: 1.1em;
+}
+.tablas tbody th a {
+ 	
+	background: transparent;
+	color: #003366;
+	font-weight: bold;	
+	font-weight: bold;
+	font-size: 1.1em;
+}
+.tablas tbody th a:visited {
+	color: #003366;
+	font-size: 1.1em;
+	font-weight: bold;
+}
+.tablas tbody th, tbody td {
+	vertical-align: top;
+	text-align: left;
+}
+.tablas tfoot td {
+	border: 1.5px solid #996;
+}
+.tablas tbody tr:hover {
+	background: #ffffd9;
+}
+
+/*****************TABLAS DE menus DE DATOS**************************/
+.tablamenu table {
+	border-collapse: collapse;
+	border: 1px solid #bbbbbb;
+	font: normal 80%/140% verdana, helvetica, sans-serif;
+	color: #000;
+	background: #F0F0F0;
+}
+.tablamenu td, th {
+	border: 1px solid #e0e0e0;
+	border-bottom: ##F0F0F0;
+	padding: 0.5em;
+	font-size: 0.7em;
+}
+.tablamenu thead th {
+	border: 1px solid #e0e0e0;
+	border-bottom: #92A6C1 1px solid;
+	text-align: left;
+	font-size: 1em;
+	font-weight: bold;
+	background: #DDDDDD;
+	color:#000;
+}
+.tablamenu tfoot th, tfoot td {
+	border: 1px solid #e0e0e0;
+	text-align: left;
+	font-size: 0.80em;
+	background: #e8e8cf;
+}
+.tablamenu tfoot th {
+	font-weight: bold;
+}
+.tablamenu tbody td a {
+	background: transparent;
+	color: #000;
+	text-decoration: underline;
+	font-size: 1.2em;
+}
+.tablamenu tbody th a {
+	background: transparent;
+	color: #000;
+	
+	font-weight: bold;
+	font-size: 1.2em;
+}
+.tablamenu tbody th a:visited {
+	color: #000;
+	font-size: 1.2em;
+}
+.tablamenu tbody th, tbody td {
+	vertical-align: top;
+	text-align: left;
+}
+.tablamenu tfoot td {
+	border: 1px solid #996;
+}
+.tablamenu tbody tr:hover {
+	background: #fff;
+}
+
+/*******************************************/
+
+/****************TABLAS DE impresion de hoja de envio***************************/
+
+.tablaenvio table {
+	border-collapse: collapse;
+	border: 2px solid #3f7c5f;
+	font: normal 80%/140% verdana, helvetica, sans-serif;
+	color: #000;
+	background: #F1F8EE;
+	
+}
+.tablaenvio td, th {
+	border: 1px solid #e0e0e0;
+	padding: 0.5em;
+	font-size: 0.90em;
+}
+.tablaenvio thead th {
+	border: 1px solid #e0e0e0;
+	text-align: left;
+	font-size: 1em;
+	font-weight: bold;
+	background: #2C5755;
+	color:#FFFFFF;
+}
+.tablaenvio tbody th {
+	border: 1px solid #e0e0e0;
+	text-align: left;
+	font-size: 0.90em;
+	font-weight: bold;
+	background: #6E8D88;
+	color:#FFFFFF;
+}
+.tablaenvio tfoot th, tfoot td {
+	border: 1px solid #e0e0e0;
+	text-align: left;
+	font-size: 0.80em;
+	background: #e8e8cf;
+}
+.tablaenvio tfoot th {
+	font-weight: bold;
+}
+.tablaenvio tbody td a {
+	background: transparent;
+	color: #3f7c5f;
+	text-decoration: underline;
+	font-size: 1.5em;
+}
+.tablaenvio tbody th a {
+	background: transparent;
+	color: #3f7c5f;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.tablaenvio tbody th a:visited {
+	color: #3f7c5f;
+	font-size: 1.5em;
+}
+.tablaenvio tbody th, tbody td {
+	vertical-align: top;
+	text-align: left;
+}
+.tablaenvio tfoot td {
+	border: 1px solid #996;
+}
+.tablaenvio tbody tr:hover {
+	background: #DBE6DD;
+}
+
+
+
+/*******************************************/
+
+
+/****************TABLAS DE HISTORIAL***************************/
+
+.tablahisto table {
+	border-collapse: collapse;
+	border: 2px solid #3f7c5f;
+	font: normal 80%/140% verdana, helvetica, sans-serif;
+	color: #000;
+	background: #F1F8EE;
+	
+}
+.tablahisto td, th {
+	border: 1px solid #e0e0e0;
+	padding: 0.5em;
+	font-size: 0.90em;
+}
+.tablahisto thead th {
+	border: 1px solid #e0e0e0;
+	text-align: left;
+	font-size: 1em;
+	font-weight: bold;
+	background: #2C5755;
+	color:#FFFFFF;
+}
+.tablahisto tbody th {
+	border: 1px solid #e0e0e0;
+	text-align: left;
+	font-size: 0.90em;
+	font-weight: bold;
+	background: #6E8D88;
+	color:#FFFFFF;
+}
+.tablahisto tfoot th, tfoot td {
+	border: 1px solid #e0e0e0;
+	text-align: left;
+	font-size: 0.80em;
+	background: #e8e8cf;
+}
+.tablahisto tfoot th {
+	font-weight: bold;
+}
+.tablahisto tbody td a {
+	background: transparent;
+	color: #3f7c5f;
+	text-decoration: underline;
+	font-size: 1.5em;
+}
+.tablahisto tbody th a {
+	background: transparent;
+	color: #3f7c5f;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.tablahisto tbody th a:visited {
+	color: #3f7c5f;
+	font-size: 1.5em;
+}
+.tablahisto tbody th, tbody td {
+	vertical-align: top;
+	text-align: left;
+}
+.tablahisto tfoot td {
+	border: 1px solid #996;
+}
+.tablahisto tbody tr:hover {
+	background: #DBE6DD;
+}
+
+
+
+/*******************************************/
+
+/*********estilo de menus pantalla******************
+.titucamenu{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:13px;
+  font-weight:bold;
+  color:#ffffff;
+  background:#004E98;	
+}
+.contmenu{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:13px;
+  font-weight:bold;
+  color:#000000;
+  background:#839CDA;	
+}
+/******************************/
+/*******************************************/
+
+/**********estilo lista grupo no rececep*********************/
+.data-listas{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:11px;
+  border: 2px #000000 solid;
+  background:#fff;
+
+}
+
+.data-listas2{
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+  font-size:11px;
+  border: 2px #000000 solid;
+  background:#839CDA;
+
+}
+
+/**********************************************************/
+/*******************************************/  
+  
+
+/***********************/
+
+/**************************************************/
+/*****************link*******************************/
+
+
+
+/**************************************************/
+/**************************************************/
+
+
+/************************************/
+/*estilo de las tablas del historial*/
+/************************************/
+
+
+.titletabla{
+border-style: solid;
+border-width: 1px;
+background-color:#000080;
+color: #FFFFff;
+font-family: verdana, arial;
+font-size: 10pt;
+font-weight:bold;
+
+}
+
+.cabecerahist{
+	font-size:12px;	
+	font-family:Verdana;
+	background:#000080;
+	color:#fff;
+}
+
+.tabla{
+font-family: verdana, arial;
+font-size: 10pt;
+background-color:#ECE9D8;
+border: 2px #000000 solid;	
+}
+/**************************************/
+/**************************************/
+
+
+.linebajo{
+border-bottom-style:solid;
+border-bottom-width:1 px;
+border-bottom-color:#C0C0C0;
+
+}
+#container {
+  margin: 0em auto; 
+  width: 890px;
+  background-color: #fff;
+  border-left: 1px solid #d1d0d0;
+  border-right: 1px solid #d1d0d0;
+  font-size: 1.2em;
+  font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+/*
+input.Boton{
+BORDER-RIGHT: #7c7147 1px solid; BORDER-TOP: #7c7147 1px solid; FONT-SIZE: 14px; BORDER-LEFT: #7c7147 1px solid; COLOR: #000000; BORDER-BOTTOM: #7c7147 1px solid; FONT-FAMILY: Verdana, Arial; BACKGROUND-COLOR: #F6F6F6; width:250px
+}
+input.caja-txt{
+BORDER-RIGHT: #000 1px solid; BORDER-TOP: #000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000 1px solid; COLOR: #000000; BORDER-BOTTOM: #000 1px solid; FONT-FAMILY: Verdana, Arial; BACKGROUND-COLOR: #ffffff;  font-weight:bold;
+}
+TEXTAREA {
+BORDER-RIGHT: #000 1px solid; BORDER-TOP: #000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000 1px solid; COLOR: #000000; BORDER-BOTTOM: #000 1px solid; FONT-FAMILY: Verdana, Arial; BACKGROUND-COLOR: #ffffff;  font-weight:bold;
+}*/
+/*
+SELECT.tupa {
+BORDER-RIGHT: #000 1px solid; BORDER-TOP: #000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000 1px solid; COLOR: #7E7F7F; BORDER-BOTTOM: #000 1px solid; FONT-FAMILY: Verdana, Arial; BACKGROUND-COLOR: #FFFFF;  font-weight:bold;
+}
+TABLE.lista{
+    border-collapse: collapse;
+    border: 2px solid #638697;
+}
+TABLE.cuadro{
+    border-collapse: collapse;
+    border: 2px solid #638ddd;
+}
+TABLE.est2{
+    border-collapse: collapse;
+    border: 2px solid #000000;
+}
+tr.list{
+    border-collapse: collapse;
+    border: 2px solid #000000;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:10px;
+}
+
+/**********************************************************
+/**********************************************************
+/**********************************************************/
+
+.resaltado
+{
+    background-color:#FFFFFF; color:#000000;
+    cursor:pointer;
+}
+
+.normal
+{
+    background-color:#EAEAEA; color:#000000;
+}
+
+/*.punteado 
+{ 
+    margin:auto;
+    border-width:1px;
+    border-style:dotted; 
+    border-color:#000000; 
+    background-color:#EAEAEA; color:#000000;
+    font-family:Verdana, Arial, Helvetica, sans-serif; 
+    font-size:10px; 
+    text-align:center;
+}*/
+
+.inputs
+{
+    height:16px;
+    font-size:10px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+.botonOk
+{
+    height:15px;
+    width:25px;
+    font-size:8px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+.aviso
+{
+    margin:auto;
+    font-size:10px;
+    font-family:Verdana, Arial, Helvetica, sans-serif; 
+    background-color:#FFFFFF; color:#FF0000;
+}
+
+.texto 
+{
+    background-color:#FFFFFF; color:#000000;
+    font-size:10px;
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+#lista
+{
+    position:absolute;
+    width:114px;
+    font-family:Verdana, Arial, Helvetica, sans-serif; 
+    background-color:#EAEAEA; color:#000000;
+    border:1px dotted; border-color:#000000;
+    z-index:1;
+    top:25px;
+    left:38px;
+    display:none;
+}
+
+#contenedor
+{
+    position:relative; 
+    width:190px;
+}
+
+.centrado
+{ 
+    width:750px;
+    margin:auto;
+}
+
+
+
+
+/*********************************************************/
+/************************************************************/
+tr.info {
+    position:relative; 
+    z-index:24; 
+	/*background-color:#fff;*/
+    /*color:#000;*/
+    text-decoration:none;
+    
+    font-family:Verdana, Arial, Helvetica, sans-serif;
+    font-size:11px;
+    height:40px;
+    border: 2px #000000 solid;
+}
+tr.info:hover {
+	z-index:25; background-color:#ff0;
+}
+tr.info span {
+	display: none;
+}
+tr.info:hover span { 
+	display:block;
+	position:absolute;
+	top:2em;
+	left:2em;
+	width:200px;
+	border:1px solid #0cf;
+	background-color:#EEEEEE;
+	color:#000000;
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	padding: 5px;
+}
