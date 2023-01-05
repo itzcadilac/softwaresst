@@ -14,7 +14,9 @@ if ($busqueda != ''){
 	sc.ruc as ruc,
 	sc.numparticipantes as numparticipantes,
 	tc.desccapacitacion as desccapacitacion,
-	cc.hora as hora
+	cc.hora as hora,
+	sc.numcontacto as numcontacto,
+	sc.correo as correo
 	FROM solicitudcapac sc
 	INNER JOIN calendcapacitaciones cc on sc.idecalendcapacitaciones = cc.idecalendcapacitaciones
 	INNER JOIN tipcapacitaciones tc on cc.idecapacitacion = tc.idecapacitacion
