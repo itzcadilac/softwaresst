@@ -33,9 +33,9 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="formulario_historial_derivados.php">
+								<a href="solicitudesxcapacitacion.php">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Historial de Solicitudes
+									Solicitudes por Capacitación
 								</a>
 
 								<b class="arrow"></b>
