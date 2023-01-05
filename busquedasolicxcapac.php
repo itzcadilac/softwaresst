@@ -18,7 +18,8 @@ if ($busqueda != ''){
 	FROM solicitudcapac sc
 	INNER JOIN calendcapacitaciones cc on sc.idecalendcapacitaciones = cc.idecalendcapacitaciones
 	INNER JOIN tipcapacitaciones tc on cc.idecapacitacion = tc.idecapacitacion
-	WHERE cc.idecalendcapacitaciones = '$busqueda';
+	WHERE cc.idecalendcapacitaciones = '$busqueda'
+	AND sc.estadosolic <> 4;
 	";
 
 	//$sqlautorizador = "SELECT cuposdispo FROM calendcapacitaciones WHERE idecalendcapacitaciones = '$busqueda';";
