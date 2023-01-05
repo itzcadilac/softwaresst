@@ -57,7 +57,7 @@ $result2 = mysqli_query($conx, $sql2) or die(mysqli_error());
 
 
 		<script src="assets/js/ace-extra.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 	</head>
 
