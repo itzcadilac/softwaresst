@@ -57,6 +57,7 @@ $result2 = mysqli_query($conx, $sql2) or die(mysqli_error());
 
 
 		<script src="assets/js/ace-extra.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 	</head>
 
@@ -87,15 +88,7 @@ include "menu.php";
 							</li>
 							<li class="active">Principal</li>
 						</ul><!-- /.breadcrumb -->
-<!--
-						<div class="nav-search" id="nav-search">
-							<form class="form-search" action="controlador.php?pagina=5" method="post">
-								<span class="input-icon">
-									<input type="text" name="busqueda" placeholder="Ingresar Solicitud a Buscar ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
-									<i class="ace-icon fa fa-search nav-search-icon"></i>
-								</span>
-							</form>
-						</div>--><!-- /.nav-search -->
+
 					</div>
 				<div class="page-content">
 						<div class="ace-settings-container" id="ace-settings-container">
@@ -119,6 +112,63 @@ include "menu.php";
 
 
 <script type="text/javascript">
+
+window.onload = function() {
+  var myInput = document.getElementById('form-field-1');
+  myInput.onpaste = function(e) {
+    e.preventDefault();
+    alert("esta acción está prohibida");
+  }
+  
+  myInput.oncopy = function(e) {
+    e.preventDefault();
+    alert("esta acción está prohibida");
+  }
+}
+
+var numero = 0;
+
+// Funciones comunes
+c= function (tag) { // Crea un elemento
+   return document.createElement(tag);
+}
+d = function (id) { // Retorna un elemento en base al id
+   return document.getElementById(id);
+}
+e = function (evt) { // Retorna el evento
+   return (!evt) ? event : evt;
+}
+f = function (evt) { // Retorna el objeto que genera el evento
+   return evt.srcElement ?  evt.srcElement : evt.target;
+}
+
+addField = function () {
+   container = d('files');
+
+   span = c('SPAN');
+   span.className = 'file';
+   span.id = 'file' + (++numero);
+
+   field = c('INPUT');
+   field.name = 'archivos[]';
+   field.type = 'file';
+
+   a = c('A');
+   a.name = span.id;
+   a.href = '#';
+   a.onclick = removeField;
+   a.innerHTML = 'Quitar';
+
+   span.appendChild(field);
+   span.appendChild(a);
+   container.appendChild(span);
+}
+removeField = function (evt) {
+   lnk = f(e(evt));
+   span = d(lnk.name);
+   span.parentNode.removeChild(span);
+}
+
 function spacio(e){
 	tecla=(document.all) ? e.keyCode : e.which;
 	return tecla!=32;
@@ -171,121 +221,84 @@ if ($result->num_rows > 0) //si la variable tiene al menos 1 fila entonces segui
 
 $conexion->close();
 ?>
-            <div class="col-sm-9">
-                <select class="chosen-select form-control" name="tipcapacitacion" id="form-field-select-3" data-placeholder="Seleccione la capacitación" required>
+             <div class="col-sm-9">
+                <select class="chosen-select form-control" id="tipcapacitaciones" name="tipcapacitaciones" id="form-field-select-3" data-placeholder="Seleccione la capacitación" required>
                   <?php echo $combobit; ?>
                 </select>
               </div>
+
               </div>
-              <div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Día de capacitación: </label>
-				<div class="col-sm-9">
-					<div class="input-group">
-						<input class="form-control date-picker" name="diacapacitacion" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" required/>
-						<span class="input-group-addon">
-							<i class="fa fa-calendar bigger-110"></i>
-						</span>
-					</div>
-				</div>
-			  </div>
 			  <div class="form-group">
-				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Hora de capacitación: </label>
-				<div class="col-sm-9">
-					<div class="input-group bootstrap-timepicker">
-						<input id="timepicker1" type="text" class="form-control" name="horacapacitacion" required/>
-						<span class="input-group-addon">
-							<i class="fa fa-clock-o bigger-110"></i>
-						</span>
-					</div>
-				</div>
-			  </div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Cantidad de participantes: </label>
-						<div class="col-sm-9">
-							<input type="number" name="capacity" id="form-field-1" min="5" max="200" placeholder="" class="form-control" onkeypress="return solonumero(event);" required/>
-						</div>
-					</div>
-					</div>
-						<div  class="form-group" >
+							<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Elige el horario:</label>
+
+							<div class="col-sm-9" id="content_horario">
+								<select class="form-control" name="horario_r" id="horario_r" required>	
+								<option value="0">---Seleccione---</option>							
+								</select>
 							</div>
-								<div class="col-md-offset-3 col-md-9">
-									<button class="btn btn-info" type="submit" id="postback" name="postback" accesskey="6">
-											<i class="ace-icon fa fa-check bigger-110"></i>
-											Agendar Capacitación
-									</button>
-										&nbsp; &nbsp; &nbsp;
-									<button class="btn" type="reset">
-											<i class="ace-icon fa fa-undo bigger-110"></i>
-											Limpiar
-									</button>
-								</div>
-							</div>
-						</div>
+			   </div>
+					</div>
+						
 					</form>
+
+					<script>
+							$(function(){
+
+								$('#tipcapacitaciones').on('change', function(){
+								var tipcapacitaciones = $('#tipcapacitaciones').val();
+								var url = 'busquedahorarios.php';
+								var text = ''
+								//$('.ajaxgif').removeClass('hide');
+								$.ajax({
+								type:'POST',
+								url:url,
+								data:'tipcapacitaciones='+tipcapacitaciones,
+								success: function(response){
+									var datos = JSON.parse(response);
+									$('#cuposlibres').html(` 
+									<input type="text" name="cuposdispo" id="form-field-1" placeholder="" class="col-xs-10 col-sm-5" value="" readonly />
+									`);
+									var output = ['<option value="0">---Seleccione---</option>']
+									datos.data.forEach(item => {
+									output.push(`<option value="${item.idecalendcapacitaciones}">${item.hora}</option>`);				
+									});
+									console.log($('#horario_r').get(0));
+									$('#horario_r').get(0).innerHTML = output.join('');
+								}
+								});
+								return false;
+								});
+							});
+
+							$(function(){
+								$('#horario_r').on('change', function(){
+								var horario = $('#horario_r').val();
+								var url = 'busquedasolicxcapac.php';
+								var text = ''
+								$.ajax({
+								type:'POST',
+								url:url,
+								data:'horario='+horario,
+								success: function(response){
+									var datos = JSON.parse(response);
+									
+									var output = 
+									['<table id=simple-table class=table table-striped table-bordered table-hover><div class=clearfix><div class=pull-right tableTools-container></div></div><div class=table-header> Capacitaciones Agendadas</div><thead>	<tr><th width=5%> IDESOLICITUD </th><th width=20%> RAZÓN SOCIAL </th>		<th width=12%> RUC </th>		<th width=5%> NRO. PARTICIPANTES </th>		<th width=30%> CAPACITACIÓN </th>		<th width=20%> HORARIO </th>	</tr></thead><tbody> ']
+									datos.data.forEach(item => {
+									//output.push(`<option value="${item.idecalendcapacitaciones}">${item.hora}</option>`);
+									output.push(`<tr><td>${item.idesolicitud}</td><td>${item.razons}</td><td>${item.ruc}</td><td>${item.numparticipantes}</td><td>${item.desccapacitacion}</td><td>${item.hora}</td></tr>`);
+									});
+									output.push = ['</tbody></table>']
+									console.log($('#table1').get(0));
+									$('#table1').get(0).innerHTML = output.join('');
+								}
+								});
+								return false;
+								});
+							});
+					</script>	
 								<div class="hr hr32 hr-dotted"></div>
-										<div class="row">
-											<div class="col-xs-12">
-													<?php
-														if (mysqli_num_rows($result2) > 0) {
-															echo "
-														<table id='simple-table' class='table table-striped table-bordered table-hover'>";
-    														echo "
-																<div class=clearfix>
-																<div class=pull-right tableTools-container></div>
-																</div>
-																<div class=table-header>
-																	Capacitaciones Agendadas
-																</div>
-																<thead>
-																<tr>
-																<th width='30%'> CAPACITACIÓN </th>
-																<th width='15%'> FECHA Y HORA </th>
-																<th width='20%'> CAPACITADOR </th>
-																<th width='10%'> CUPOS TOTALES </th>
-																<th width='10%'> CUPOS DISPONIBLES </th>
-																</tr>
-																</thead>";
-
-															while ($row = mysqli_fetch_array($result2)) {
-																echo "
-															<tbody>
-															<tr>
-																<td align='center'>
-																	" . $row[desccapacitacion] . "
-																</td>
-																";
-        													echo "
-																<td align='center'>
-																	" . $row[hora] . "
-																</td>
-																<td align='left'>
-																	" . $row[nombresape] . "
-																</td>
-
-																<td align='left'>
-																	" . $row[cupos] . "
-																</td>
-																<td>
-																" . $row[cuposdispo] . "
-																</td>
-																";"
-															</tr>
-															</tbody>
-															";}echo "</table> <br>";
-																} else {
-																	echo "<div class=page-header>
-																		<h1>
-																			<small>
-																			<!--	<i class=ace-icon fa fa-angle-double-right></i>-->
-																				No existen expedientes por mostrar
-																			</small>
-																		</h1>
-																	</div>";
-																}
-																mysqli_close($conx);
-																?>
-											</div><!-- /.col -->
-										</div><!-- /.row -->
+								<div id="table1"></div>
 								<div class="hr hr32 hr-dotted"></div>
 
 							</div>
@@ -412,6 +425,7 @@ include "footer.php";
 				{ label: "direct traffic",  data: 18.6, color: "#DA5430"},
 				{ label: "other",  data: 10, color: "#FEE074"}
 			  ]
+			  /*
 			  function drawPieChart(placeholder, data, position) {
 			 	  $.plot(placeholder, data, {
 					series: {
@@ -441,14 +455,14 @@ include "footer.php";
 					}
 				 })
 			 }
-			 drawPieChart(placeholder, data);
+			 drawPieChart(placeholder, data);*/
 
 			 /**
 			 we saved the drawing function and the data to redraw with different position later when switching to RTL mode dynamically
 			 so that's not needed actually.
 			 */
 			 placeholder.data('chart', data);
-			 placeholder.data('draw', drawPieChart);
+			 //placeholder.data('draw', drawPieChart);
 
 
 			  //pie chart tooltip example
@@ -493,7 +507,7 @@ include "footer.php";
 					d3.push([i, Math.tan(i)]);
 				}
 
-
+				/*
 				var sales_charts = $('#sales-charts').css({'width':'100%' , 'height':'220px'});
 				$.plot("#sales-charts", [
 					{ label: "Domains", data: d1 },
@@ -520,7 +534,7 @@ include "footer.php";
 						borderWidth: 1,
 						borderColor:'#555'
 					}
-				});
+				});*/
 
 
 				$('#recent-box [data-rel="tooltip"]').tooltip({placement: tooltip_placement});

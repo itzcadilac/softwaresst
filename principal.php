@@ -12,19 +12,6 @@ $tpl->assign('acceso',$_SESSION['acceso']);
 $se= new ValidacionDAO();
 $vari=$se->TiempoSesion();
 
-//para mostrar los datos en la parte superior
-/*$tpl->assign('area',$_SESSION['nomarea']);
-$tpl->assign('usuario',$_SESSION['nombre']);
-$tpl->assign('cabefecha',$_SESSION['mostrarfecha']);
-
-$daoexp= new ExpedienteDAO();
-$dtoadj = $daoexp->Verificardatosadjuntos();
-$dtoban = $daoexp->Verificardatosbandeja();
-$dtotim = $daoexp->Verificardatostiempo();
-
-$tpl->assign('dtoadj',$dtoadj);
-$tpl->assign('dtoban',$dtoban);
-*/
 ?>
 <?php
 $daosol= new SolicitudDAO();
@@ -146,100 +133,95 @@ $result= mysqli_query($conx,$sql) or die(mysqli_error());
 
 						<div class="row">
 							<div class="col-xs-12">
-							<?php
-							if(mysqli_num_rows($result)>0) {
-							echo "
-							<form name=formderivar action=controlador.php?pagina=2 method=post>
-							
-							<table id='simple-table' class='table table-striped table-bordered table-hover'>";
+										<?php
+										if(mysqli_num_rows($result)>0) {
+										echo "
+										<form name=formderivar action=controlador.php?pagina=2 method=post>
+										<table id='simple-table' class='table table-striped table-bordered table-hover'>";
+										echo "
+												<div class=clearfix>
+												<div class=pull-right tableTools-container></div>
+												</div>		
+												<div class=table-header>
+												<button class=btn btn-info type=submit>
+												<i class=ace-icon fa fa-check bigger-110></i>
+												Aprobar Solicitudes
+												</button>
+												</div>
+												<thead>
+												<tr>
+												<th width='2%' class=center>
+												<label class=pos-rel>
+													
+													<span class=lbl></span>
+													</label>
+												</th>
+												<th width='2%'> ID </th>
+												<th width='40%'> SOLICITUD </th>
+												<th width='40%'> DETALLE </th>			 
+												<th width='16%'> </th>
+												</tr>
+												</thead>";
 
- echo "
-		<div class=clearfix>
-		<div class=pull-right tableTools-container></div>
-		</div>		
-		<div class=table-header>
-		<button class=btn btn-info type=submit>
-		<i class=ace-icon fa fa-check bigger-110></i>
-		Aprobar Solicitudes
-		</button>
-		</div>
-		<thead>
-		<tr>
-         <th width='2%' class=center>
-		 <label class=pos-rel>
-			
-			<span class=lbl></span>
-			</label>
-		 </th>
-		 <th width='2%'> ID </th>
-		 <th width='40%'> SOLICITUD </th>
-         <th width='40%'> DETALLE </th>			 
-		 <th width='16%'> </th>
-      </tr>
-	  </thead>";
-
-while($row=mysqli_fetch_array($result))
-{
- echo "
-	<tbody>
-	<tr>
-         <td align='center'>";
-		if($row[codestado]==5) {}
-		else if ($row[codestado]==6) {
-		 echo "<input type=checkbox name=expediente[] title=Seleccione para Aprobar onClick='CambiaFilColor(this,this.id);'
-		    id=".$row[idesolicitud]." value=".$row[idesolicitud].">";
-		}
-		echo "</td>
-		 
-         <td align='center'> 
-		 <a href=controlador.php?pagina=9&idexpediente=".$row[idesolicitud].">".$row[idesolicitud]."</a>
-		 </td>
-         
-		 <td align='left'>
-		 <b>-RUC:</b> ".$row[rucs]." <br>
-		 <b>-Contratista:</b> ".$row[razonsocial]." <br>
-		 <b>-Participantes: </b>".$row[numparticipantes]." <br>
-		 <b>-Celular: </b>".$row[numcontacto]." <br>
-		 <b>-Correo:</b> ".$row[correo]." <br>	 
-		 <b>-Fecha y Hora de Registro Solicitud: </b>".$row[feccrea]." <br>
-		 </td>
-         
-		 <td align='left'>
-		 <b>-Estado: </b>".$row[estadosol]." <br>
-		 <b>-Tipo Capacitación: </b>".$row[desccapacitacion]." <br>
-		 <b>-Fecha y Hora Seleccionada: </b>".$row[hora]." <br>
-		 <b>-Datos Autorizador: </b>".$row[nombres_aut]." <br>
-		 <b>-Código Personal: </b>".$row[nro_personal]." <br>
-		 <b>-Fecha y Hora Autorización: </b>".$row[fechoraautoriza]." 
-		 </td>
-		 <td>";
-		 if($row[codestado]==5) {}
-		 else if ($row[codestado]==6) {
-		 echo "<input type=button value='Rechazar Solicitud' onclick=cancelar('controlador.php?pagina=8&idesolicitud=".$row[idesolicitud]."');>";}"
-		
-		 </td>
-      </tr>
-	  </tbody>
-	  ";
-}
-echo "</table> </form><br>";
-}
-else
-{
-    echo "<div class=page-header>
-							<h1>
-								
-								<small>
-								<!--	<i class=ace-icon fa fa-angle-double-right></i>-->
-									No existen expedientes por mostrar
-								</small>
-							</h1>
-						</div>";
-}
-mysqli_close($conx);
-
-							?>
-
+										while($row=mysqli_fetch_array($result))
+										{
+										echo "
+											<tbody>
+											<tr>
+												<td align='center'>";
+												if($row[codestado]==5) {}
+												else if ($row[codestado]==6) {
+												echo "<input type=checkbox name=expediente[] title=Seleccione para Aprobar onClick='CambiaFilColor(this,this.id);'
+													id=".$row[idesolicitud]." value=".$row[idesolicitud].">";
+												}
+												echo "</td>
+												
+												<td align='center'> 
+												<a href=controlador.php?pagina=9&idexpediente=".$row[idesolicitud].">".$row[idesolicitud]."</a>
+												</td>
+												
+												<td align='left'>
+												<b>-RUC:</b> ".$row[rucs]." <br>
+												<b>-Contratista:</b> ".$row[razonsocial]." <br>
+												<b>-Participantes: </b>".$row[numparticipantes]." <br>
+												<b>-Celular: </b>".$row[numcontacto]." <br>
+												<b>-Correo:</b> ".$row[correo]." <br>	 
+												<b>-Fecha y Hora de Registro Solicitud: </b>".$row[feccrea]." <br>
+												</td>
+												
+												<td align='left'>
+												<b>-Estado: </b>".$row[estadosol]." <br>
+												<b>-Tipo Capacitación: </b>".$row[desccapacitacion]." <br>
+												<b>-Fecha y Hora Seleccionada: </b>".$row[hora]." <br>
+												<b>-Datos Autorizador: </b>".$row[nombres_aut]." <br>
+												<b>-Código Personal: </b>".$row[nro_personal]." <br>
+												<b>-Fecha y Hora Autorización: </b>".$row[fechoraautoriza]." 
+												</td>
+												<td>";
+												if($row[codestado]==5) {}
+												else if ($row[codestado]==6) {
+												echo "<input type=button value='Rechazar Solicitud' onclick=cancelar('controlador.php?pagina=8&idesolicitud=".$row[idesolicitud]."');>";}"
+												
+												</td>
+											</tr>
+											</tbody>
+											";
+										}
+										echo "</table> </form><br>";
+										}
+										else
+										{
+											echo "<div class=page-header>
+														<h1>
+															<small>
+															<!--	<i class=ace-icon fa fa-angle-double-right></i>-->
+																No existen expedientes por mostrar
+															</small>
+														</h1>
+													</div>";
+										}
+										mysqli_close($conx);
+										?>
 								</div>
 							</div><!-- /.col -->
 						</div><!-- /.row -->
