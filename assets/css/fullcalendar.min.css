@@ -348,7 +348,7 @@
     border-bottom-right-radius: 0;
   }
   .fc-day-grid-event > .fc-content {
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     overflow: hidden;
   }
   .fc-day-grid-event .fc-time {
