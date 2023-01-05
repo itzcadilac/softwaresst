@@ -198,10 +198,9 @@ $result= mysqli_query($conx,$sql) or die(mysqli_error());
 												<b>-Fecha y Hora Autorización: </b>".$row[fechoraautoriza]." 
 												</td>
 												<td>";
-												if($row[codestado]==5) {}
-												else if ($row[codestado]==6) {
-												echo "<input type=button value='Rechazar Solicitud' onclick=cancelar('controlador.php?pagina=8&idesolicitud=".$row[idesolicitud]."');>";}"
-												
+												if($row[codestado]==5 || $row[codestado]==6) 
+												{echo "<input type=button value='Rechazar Solicitud' onclick=cancelar('controlador.php?pagina=8&idesolicitud=".$row[idesolicitud]."');>";}
+												"												
 												</td>
 											</tr>
 											</tbody>
