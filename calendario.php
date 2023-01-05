@@ -29,10 +29,15 @@ cc.hora as hora,
 YEAR(cc.hora) as anio,
 MONTH(cc.hora)-1 as mes,
 DAY(cc.hora) as dia,
-HOUR(cc.hora) as hora,
-MINUTE(cc.hora) as minuto
+HOUR(cc.hora) as horas,
+MINUTE(cc.hora) as minuto, 
+IFNULL(SUM(sc.numparticipantes),0) as numparticipantes
 from calendcapacitaciones cc
-INNER JOIN tipcapacitaciones tc on tc.idecapacitacion = cc.idecapacitacion';
+INNER JOIN tipcapacitaciones tc on tc.idecapacitacion = cc.idecapacitacion
+LEFT JOIN solicitudcapac sc on sc.idecalendcapacitaciones = cc.idecalendcapacitaciones
+WHERE YEAR(cc.hora) > 2022
+GROUP BY cc.idecalendcapacitaciones
+ORDER BY cc.hora ASC';
 
 ($result1 = mysqli_query($conx, $sql1)) or die(mysqli_error());
 ($result2 = mysqli_query($conx, $sql2)) or die(mysqli_error());
@@ -220,10 +225,10 @@ INNER JOIN tipcapacitaciones tc on tc.idecapacitacion = cc.idecapacitacion';
 		  <?php
        	  while($row = mysqli_fetch_array($result2)){ ?>
           {
-          title: '<?php echo $row['nombrecorto']; ?>',
-          start: new Date( '<?php echo $row['anio']; ?>', '<?php echo $row['mes']; ?>', '<?php echo $row['dia']; ?>', '<?php echo $row['hora']; ?>', '<?php echo $row['minuto']; ?>' ),
+          title: '<?php echo $row['nombrecorto']; ?>' + ' | Participantes: ' + '<?php echo $row['numparticipantes']; ?>',
+          start: new Date( '<?php echo $row['anio']; ?>', '<?php echo $row['mes']; ?>', '<?php echo $row['dia']; ?>', '<?php echo $row['horas']; ?>', '<?php echo $row['minuto']; ?>' ),
 		  allDay: false,
-          className: 'label-success'
+          className: 'label-info'
           },
         <?php } ?>
 
