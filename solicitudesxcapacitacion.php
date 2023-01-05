@@ -283,10 +283,10 @@ $conexion->close();
 									var datos = JSON.parse(response);
 									
 									var output = 
-									['<table id=simple-table class=table table-striped table-bordered table-hover><div class=clearfix><div class=pull-right tableTools-container></div></div><div class=table-header> Capacitaciones Agendadas</div><thead>	<tr><th width=5%> IDESOLICITUD </th><th width=20%> RAZÓN SOCIAL </th>		<th width=12%> RUC </th>		<th width=5%> NRO. PARTICIPANTES </th>		<th width=30%> CAPACITACIÓN </th>		<th width=20%> HORARIO </th>	</tr></thead><tbody> ']
+									['<table id=simple-table class=table table-striped table-bordered table-hover><div class=clearfix><div class=pull-right tableTools-container></div></div><div class=table-header> Capacitaciones Agendadas</div><thead>	<tr><th width=5%> IDESOLICITUD </th><th width=20%> RAZÓN SOCIAL </th>		<th width=12%> RUC </th>		<th width=5%> NRO. PARTICIPANTES </th>		<th width=30%> CAPACITACIÓN </th>		<th width=20%> HORARIO </th>	<th width=20%> NUM. CONTACTO </th> <th width=20%> CORREO </th>	</tr></thead><tbody> ']
 									datos.data.forEach(item => {
 									//output.push(`<option value="${item.idecalendcapacitaciones}">${item.hora}</option>`);
-									output.push(`<tr><td>${item.idesolicitud}</td><td>${item.razons}</td><td>${item.ruc}</td><td>${item.numparticipantes}</td><td>${item.desccapacitacion}</td><td>${item.hora}</td></tr>`);
+									output.push(`<tr><td>${item.idesolicitud}</td><td>${item.razons}</td><td>${item.ruc}</td><td>${item.numparticipantes}</td><td>${item.desccapacitacion}</td><td>${item.hora}</td><td>${item.numcontacto}</td><td>${item.correo}</td></tr>`);
 									});
 									output.push = ['</tbody></table>']
 									console.log($('#table1').get(0));
