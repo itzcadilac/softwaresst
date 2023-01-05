@@ -39,7 +39,15 @@
 								</a>
 
 								<b class="arrow"></b>
-							</li>							
+							</li>
+							<li class="">
+								<a href="calendario.php">
+									<i class="menu-icon fa fa-caret-right"></i>
+									Calendario de Capacitaciones
+								</a>
+
+								<b class="arrow"></b>
+							</li>								
 						</ul>
 					</li>
 
